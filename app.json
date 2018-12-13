@@ -3,7 +3,10 @@
     "pages/databind/databind",
     "pages/index/index",
     "pages/logs/logs",
-    "pages/test/test"
+    "pages/test/test",
+    "pages/view/view",
+    "pages/button/button",
+    "pages/calc/calc"
   ],
   "window": {
     "backgroundTextStyle": "light",

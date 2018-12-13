@@ -37,7 +37,7 @@
 				{
 					"id": 0,
 					"name": "测试",
-					"pathName": "pages/index/index",
+					"pathName": "pages/calc/calc",
 					"query": ""
 				}
 			]

@@ -1,0 +1,17 @@
+<view class='container'>
+  <input placeholder='被加数' bindinput='bindInput1'></input>
+  <input placeholder='加数' bindinput='bindInput2'></input>
+  <button type='primary' bindtap='bindAdd'>计算</button>
+  <input placeholder='结果' value='{{result}}' disabled='false'></input>
+
+  <view class='content'>
+    <view class='section_title'>被加数</view>
+    <slider min='0' max='1000' bindchange='bindInput1' show-value></slider>
+
+    <view class='section_title'>加数</view>
+    <slider min='0' max='1000' bindchange='bindInput2' show-value></slider>
+
+    <button type='primary' bindtap='bindAdd'>计算</button>
+
+  </view>
+</view>
