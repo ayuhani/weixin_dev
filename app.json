@@ -6,7 +6,8 @@
     "pages/test/test",
     "pages/view/view",
     "pages/button/button",
-    "pages/calc/calc"
+    "pages/calc/calc",
+    "pages/calca/calca"
   ],
   "window": {
     "backgroundTextStyle": "light",
