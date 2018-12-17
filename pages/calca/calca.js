@@ -24,7 +24,10 @@ Page({
     id17: "negative", //取负
     id18: "num_0",
     id19: "dot", // 小数点
-    id20: "equ" // 等号
+    id20: "equ", // 等号
+    temp: 0,
+    lastoper: "+",
+    flag: false
   },
 
   /**
@@ -44,11 +47,11 @@ Page({
 
     if (e.target.id >= "num_0" && e.target.id <= "num_9") {
       // 点击数字键
-      if (this.data.result == '0' && !noNumFlag) {
+      if (this.data.result == '0' || noNumFlag) { // 原值为0或者上次按的是非数字
         data = ""
       }
       data += e.target.id.split("_")[1]
-      noNumFlag = true
+      noNumFlag = false
     } else {
       // 不是数字键
       noNumFlag = true;
@@ -78,17 +81,65 @@ Page({
         }
       } else if (e.target.id == 'div') {
         // 除法
-        data = this.calculate(tmp, lastoper1, data)
-
+        data = this.calculate(temp, lastoper1, data)
+        temp = data;
+        lastoper1 = "/"
+      } else if (e.target.id == 'mul') {
+        // 乘法
+        data = this.calculate(temp, lastoper1, data)
+        temp = data;
+        lastoper1 = "*"
+      } else if (e.target.id == 'add') {
+        // 加法
+        data = this.calculate(temp, lastoper1, data)
+        temp = data;
+        lastoper1 = "+"
+      } else if (e.target.id == 'sub') {
+        // 减法
+        data = this.calculate(temp, lastoper1, data)
+        temp = data;
+        lastoper1 = "-"
+      } else if (e.target.id == 'equ') {
+        // 等于
+        data = this.calculate(temp, lastoper1, data)
+        temp = 0;
+        lastoper1 = "+"
       }
     }
     this.setData({
-      result: data // 更新结果值
+      result: data, // 更新结果值
+      temp: temp,
+      lastoper: lastoper1,
+      flag: noNumFlag
     })
   },
 
+  /**
+   * 计算结果
+   */
   calculate(data1, oper, data2) {
-
+    var data;
+    data1 = parseFloat(data1);
+    data2 = parseFloat(data2);
+    switch (oper) {
+      case "+":
+        data = data1 + data2;
+        break;
+      case "-":
+        data = data1 - data2;
+        break;
+      case "*":
+        data = data1 * data2;
+        break;
+      case "/":
+        if (data2 == 0) {
+          data = 0;
+        } else {
+          data = data1 / data2;
+        }
+        break;
+    }
+    return data;
   },
 
   /**
