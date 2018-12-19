@@ -3,8 +3,15 @@
   <view class='screen'>{{result}}</view>
 
   <view class='btnGroup'>
+    <switch checked='{{record}}' bindchange='recordHistory'></switch>
+    <view class='histext'>保存历史记录</view>
+  </view>
+
+  <view class='btnGroup'>
     <button class='item orange' hover-class='other-button-hover' id='{{id1}}' bindtap='clickButton'>历史</button>
-    <button class='item orange' hover-class='other-button-hover' id='{{id2}}' bindtap='clickButton'>C</button>
+    <button class='item orange' hover-class='other-button-hover' id='{{id2}}' bindtap='clickButton'>
+      <icon type='clear' size='38' color='red' class='btnIncon'></icon>
+    </button>
     <button class='item orange' hover-class='other-button-hover' id='{{id3}}' bindtap='clickButton'>←</button>
     <button class='item orange' hover-class='other-button-hover' id='{{id4}}' bindtap='clickButton'>÷</button>
   </view>

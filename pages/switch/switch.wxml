@@ -1,0 +1,8 @@
+<view>
+  <view>
+    <text>switch组件</text>
+  </view>
+  <switch checked='false' bindchange='switch1Change'><text>{{var1}}</text></switch>
+  <switch bindchange='switch2Change' style='margin-left:150rpx' bindchange='switch2Change'><text>{{var2}}</text></switch>
+
+</view>

@@ -27,7 +27,8 @@ Page({
     id20: "equ", // 等号
     temp: 0,
     lastoper: "+",
-    flag: false
+    flag: false,
+    record: true, // 计算过程记录到历史记录中
   },
 
   /**
@@ -140,6 +141,15 @@ Page({
         break;
     }
     return data;
+  },
+
+  /**
+   * 修改记录标志
+   */
+  recordHistory(e) {
+    this.setData({
+      record: e.detail.value
+    })
   },
 
   /**

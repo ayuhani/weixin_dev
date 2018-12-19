@@ -26,7 +26,7 @@
 
 .item {
   width: 160rpx;
-  min-height: 150rpx;
+  height: 150rpx;
   margin: 10rpx;
   border-radius: 5px;
   text-align: center;
@@ -62,4 +62,8 @@
 .other-button-hover {
   background-color: #f78d1d;
   opacity: 0.9
+}
+
+.btnIncon{
+  margin-top: 30rpx
 }

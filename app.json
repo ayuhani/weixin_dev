@@ -7,7 +7,9 @@
     "pages/view/view",
     "pages/button/button",
     "pages/calc/calc",
-    "pages/calca/calca"
+    "pages/calca/calca",
+    "pages/icon/icon",
+    "pages/switch/switch"
   ],
   "window": {
     "backgroundTextStyle": "light",

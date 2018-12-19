@@ -1,0 +1,19 @@
+<view>
+  <view>
+    <block wx:for='{{iconSize}}' wx:key='{{index}}'>
+      <icon type='success' size='{{item}}'></icon>
+    </block>
+  </view>
+
+  <view>
+    <block wx:for='{{iconType}}' wx:key='{{index}}'>
+      <icon type='{{item}}' size='45'></icon>
+    </block>
+  </view>
+
+  <view>
+    <block wx:for='{{iconColor}}' wx:key='{{index}}'>
+      <icon type='success' size='45' color='{{item}}'></icon>
+    </block>
+  </view>
+</view>
