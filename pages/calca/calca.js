@@ -25,10 +25,11 @@ Page({
     id18: "num_0",
     id19: "dot", // 小数点
     id20: "equ", // 等号
-    temp: 0,
-    lastoper: "+",
-    flag: false,
+    temp: 0, // 临时结果
+    lastoper: "+", // 上一次操作符
+    flag: false, // 上一按钮是非数字按钮
     record: true, // 计算过程记录到历史记录中
+    expr: '', // 表达式
   },
 
   /**
@@ -45,6 +46,7 @@ Page({
     var temp = this.data.temp; // 取上次的临时结果
     var lastoper1 = this.data.lastoper; // 上一次的运算符
     var noNumFlag = this.data.flag; // 上一次的非数字按钮标志
+    var expr1 = this.data.expr; // 获取前面的表达式
 
     if (e.target.id >= "num_0" && e.target.id <= "num_9") {
       // 点击数字键
@@ -82,36 +84,57 @@ Page({
         }
       } else if (e.target.id == 'div') {
         // 除法
+        expr1 += data.toString() + "÷"
+        console.log(expr1)
         data = this.calculate(temp, lastoper1, data)
         temp = data;
         lastoper1 = "/"
       } else if (e.target.id == 'mul') {
         // 乘法
+        expr1 += data.toString() + "×"
+        console.log(expr1)
         data = this.calculate(temp, lastoper1, data)
         temp = data;
         lastoper1 = "*"
       } else if (e.target.id == 'add') {
         // 加法
+        expr1 += data.toString() + "+"
+        console.log(expr1)
         data = this.calculate(temp, lastoper1, data)
         temp = data;
         lastoper1 = "+"
       } else if (e.target.id == 'sub') {
         // 减法
+        expr1 += data.toString() + "-"
+        console.log(expr1)
         data = this.calculate(temp, lastoper1, data)
         temp = data;
         lastoper1 = "-"
       } else if (e.target.id == 'equ') {
         // 等于
+        expr1 += data.toString()
+        console.log(expr1)
         data = this.calculate(temp, lastoper1, data)
+        expr1 += "=" + data
+        console.log(expr1)
+        if (this.data.record) {
+          this.saveExprs(expr1)
+        }
+        expr1 = ''
         temp = 0;
         lastoper1 = "+"
+      } else if (e.target.id == 'history') {
+        wx.navigateTo({
+          url: '../history/history',
+        })
       }
     }
     this.setData({
       result: data, // 更新结果值
       temp: temp,
       lastoper: lastoper1,
-      flag: noNumFlag
+      flag: noNumFlag,
+      expr: expr1,
     })
   },
 
@@ -141,6 +164,15 @@ Page({
         break;
     }
     return data;
+  },
+
+  /**
+   * 保存历史记录
+   */
+  saveExprs(expr) {
+    var exprs = wx.getStorageSync('exprs') || []
+    exprs.unshift(expr) // 在数组开头增加一个元素
+    wx.setStorageSync('exprs', exprs)
   },
 
   /**
