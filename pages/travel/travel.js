@@ -26,8 +26,8 @@ Page({
         value: '法国'
       }
     ],
-    tiem: '8:00',
-    date: '2016-11-1',
+    time: '08:00',
+    date: '2016-11-01',
     suggest: ''
   },
 
@@ -93,6 +93,21 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function() {
+
+  },
+
+  /**
+   * 选择出发日期
+   */
+  bindDateChange(e) {
+    console.log(e.detail.value)
+  },
+
+  /**
+   * 选择出发时间
+   */
+  bindTimeChange(e) {
+    console.log(e.detail.value)
 
   }
 })

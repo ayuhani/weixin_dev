@@ -19,6 +19,25 @@
       </checkbox-group>
     </view>
 
+    <view class='section'>
+      <view class='section_title'>出发日期</view>
+      <picker mode='date' name='date1' value='{{date}}' start='2016-09-01' end='2018-09-01' bindchange='bindDateChange'>
+        <view>{{date}}</view>
+      </picker>
+    </view>
+
+    <view class='section'>
+      <view class='section_title'>出发日期</view>
+      <picker mode='time' name='time1' value='{{time}}' start='08:00' end='22:00' bindchange='bindTimeChange'>
+        <view>{{time}}</view>
+      </picker>
+    </view>
+
+    <view class='section'>
+      <view class='section_title'>其他建议</view>
+      <textarea name='suggest' style='height:100rpx;' placeholder='建议' value='{{suggest}}'></textarea>
+    </view>
+
     <view class='btn-area'>
       <button type='primary' form-type='submit'>提交</button>
       <button form-type='reset'>重置</button>
