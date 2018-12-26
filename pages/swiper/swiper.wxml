@@ -1,0 +1,32 @@
+<!--pages/swiper/swiper.wxml-->
+<view>
+
+  <view>
+    <text>swiper组件</text>
+  </view>
+
+  <view>
+
+    <view>
+      <swiper indicator-dots='{{indicatorDots}}' vertical='{{vertical}}' autoplay='{{autoplay}}' interval='{{interval}}' duration='{{duration}}'>
+        <block wx:for='{{background}}' wx:key='{{index}}'>
+          <swiper-item>
+            <image src='{{item}}' />
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+
+    <view>
+      <button type='default' bindtap='changeIndicatorDots'>指示点</button>
+      <button type='default' bindtap='changeVerticl'>{{vertical?'水平指示点':'垂直指示点'}}</button>
+      <button type='default' bindtap='changeAutoplay'>自动播放</button>
+    </view>
+
+    <slider bindchange='durationChange' value='{{duration}}' show-value='true' min='500' max='2000'></slider>
+    <view>页面切换间隔</view>
+    <slider bindchange='intervalChange' value='{{interval}}' show-value='true' min='2000' max='10000'></slider>
+    <view>滑动动画时长</view>
+  </view>
+
+</view>

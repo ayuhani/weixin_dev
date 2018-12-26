@@ -12,7 +12,8 @@
     "pages/switch/switch",
     "pages/history/history",
     "pages/form/form",
-    "pages/travel/travel"
+    "pages/travel/travel",
+    "pages/swiper/swiper"
   ],
   "window": {
     "backgroundTextStyle": "light",
