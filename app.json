@@ -13,7 +13,8 @@
     "pages/history/history",
     "pages/form/form",
     "pages/travel/travel",
-    "pages/swiper/swiper"
+    "pages/swiper/swiper",
+    "pages/modal/modal"
   ],
   "window": {
     "backgroundTextStyle": "light",
