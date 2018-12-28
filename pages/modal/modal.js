@@ -81,6 +81,18 @@ Page({
     })
   },
 
+  actionSheetTap(e) {
+    wx.showActionSheet({
+      itemList: ['菜单1', '菜单2', '菜单3', '菜单4'],
+      success: res => {
+        console.log(res)
+      },
+      complete: e => {
+        console.log(e)
+      }
+    })
+  },
+
 
   /**
    * 生命周期函数--监听页面加载

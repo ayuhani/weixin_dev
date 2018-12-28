@@ -39,6 +39,8 @@
     <view>
       <button type='default' bindtap='modalTap'>退出应用</button>
       <button bindtap='modalTap2'>可接收用户输入的对话框</button>
+      <button bindtap='actionSheetTap'>显示底部菜单</button>
+
     </view>
 
   </view>
