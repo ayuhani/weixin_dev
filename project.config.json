@@ -37,8 +37,9 @@
 				{
 					"id": 0,
 					"name": "测试",
-					"pathName": "pages/modal/modal",
-					"query": ""
+					"pathName": "pages/location/location",
+					"query": "",
+					"scene": null
 				}
 			]
 		}

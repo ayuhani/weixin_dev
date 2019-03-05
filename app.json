@@ -14,7 +14,8 @@
     "pages/form/form",
     "pages/travel/travel",
     "pages/swiper/swiper",
-    "pages/modal/modal"
+    "pages/modal/modal",
+    "pages/location/location"
   ],
   "window": {
     "backgroundTextStyle": "light",
