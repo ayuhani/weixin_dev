@@ -37,7 +37,7 @@
 				{
 					"id": 0,
 					"name": "测试",
-					"pathName": "pages/location/location",
+					"pathName": "pages/weather/weather",
 					"query": "",
 					"scene": null
 				}

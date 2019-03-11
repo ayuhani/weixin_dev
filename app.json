@@ -15,7 +15,8 @@
     "pages/travel/travel",
     "pages/swiper/swiper",
     "pages/modal/modal",
-    "pages/location/location"
+    "pages/location/location",
+    "pages/weather/weather"
   ],
   "window": {
     "backgroundTextStyle": "light",
