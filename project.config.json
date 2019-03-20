@@ -12,8 +12,8 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.1.1",
-	"appid": "touristappid",
-	"projectname": "test",
+	"appid": "wx5c951c520535b60e",
+	"projectname": "玛尼开发",
 	"condition": {
 		"search": {
 			"current": -1,
@@ -37,7 +37,7 @@
 				{
 					"id": 0,
 					"name": "测试",
-					"pathName": "pages/weather/weather",
+					"pathName": "pages/richtext/richtext",
 					"query": "",
 					"scene": null
 				}

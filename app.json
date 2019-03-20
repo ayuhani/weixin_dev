@@ -16,7 +16,8 @@
     "pages/swiper/swiper",
     "pages/modal/modal",
     "pages/location/location",
-    "pages/weather/weather"
+    "pages/weather/weather",
+    "pages/richtext/richtext"
   ],
   "window": {
     "backgroundTextStyle": "light",

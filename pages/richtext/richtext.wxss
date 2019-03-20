@@ -1,0 +1,2 @@
+/* pages/richtext/richtext.wxss */
+@import "../../tem/wxParse/wxParse.wxss"
